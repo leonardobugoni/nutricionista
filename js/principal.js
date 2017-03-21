@@ -1,4 +1,3 @@
-console.log("Aparecida Nutricionista"); //MOSTRA MENSAGEM NO CONSOLE DE DESENVOLVEDOR
 var titulo = document.querySelector(".titulo"); //CRIA VARIAVEL E LINKA COM O "TITULO"
 titulo.textContent = "Aparecida	Nutricionista"; //MUDA O CONTEUDO DO TEXTO
 
