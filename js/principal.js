@@ -15,17 +15,17 @@ var tdImc = paciente.querySelector(".info-imc");
 var pesoValido = true;
 var alturaValida = true;
 
-if (peso < 0 || peso > 1000) {
+if (peso <= 0 || peso >= 1000) {
 	console.log("Peso Invalido");
 	pesoValido = false;
 	tdImc.textContent = "Peso Invalido";
 }
-if (alutra < 0 || altura > 3.00){
+if (altura <= 0 || altura >= 3.00){
 	console.log("Altura Invalida");
 	alturaValida = false; 
 	tdImc.textContent = "altura Invalida";
 }
-if (alturaValida %% pesoValido){
+if (alturaValida && pesoValido){
 	var imc = peso / (altura * altura);
 	tdImc.textContent = imc;
 }
