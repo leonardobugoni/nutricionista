@@ -8,6 +8,14 @@ botaoAdicionar.addEventListener("click" , function(event){ //Cria um evento de c
 
 	var pacienteTr = montaTr(paciente);
 
+	var erro = validaPaciente(paciente);
+
+
+	if (erro.lenght > 0){
+		var mensagemErro = document.querySelector("#mensagem-erro");
+		mensagemErro.textContent = erro;
+		return;
+	}
 
 	var tabela = document.querySelector("#tabela-pacientes");
 
@@ -42,7 +50,6 @@ function montaTd(dado, classe) {
     return td;
 }
 
-
 function obtemPacienteDoFormulario(form) {
 
     var paciente = {
@@ -57,7 +64,11 @@ function obtemPacienteDoFormulario(form) {
 }
 
 
-
-
-
+function validaPaciente (paciente){
+	if (validaPeso(paciente.peso)){
+		return "";
+	}else{
+		return "Peso é invalido";
+	}
+}
 
